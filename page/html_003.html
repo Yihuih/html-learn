@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../css/public.css" type="text/css">
+</head>
+<style>
+  p{
+    color: blue;
+    font-size: 30px;
+  }
+</style>
+<body>
+<!--
+表单元素：
+文本域：type="text"
+密码框：type="password"
+提交服务器：type=submit
+-->
+<form name="input" action="http://localhost:8080" method="get">
+  用户名：<input type="text">
+  <br>
+  密  码：<input type="password">
+  <input type="submit" value="提交">
+</form>
+<!--
+块元素和行内元素（初学者 不这样区分）
+块元素：div form h1~h6 hr p table ul(独占一行 可以识别宽高)
+行内元素：a em span i b strong
+行内块级元素：（不独占一行，可以设置大小）button input img
+-->
+
+<!--h5新增标签语义化标签SEO
+div 容器标签
+-->
+<div id="header"></div>
+<div id="nav"></div>
+<div id="article">
+  <div id="section"></div>
+</div>
+<div id="slide"></div>
+<div id="footer"></div>
+<!--H5新标签-->
+<header></header>
+<nav></nav>
+<article>
+  <section></section>
+</article>
+<aside></aside>
+<footer></footer>
+
+<!--
+css简介
+层叠样式表、级联样式表
+.css
+定义html元素的样式，让页面更加美观
+
+css 语法
+选择器   样式声明(由属性名+属性值组成)
+h3      {color:blue; font-size:12px;}
+<style>放在<head>标签中
+<style>
+  h3{
+    color: blue;
+    font-size: 30px;
+  }
+-->
+<h3>ccs样式</h3>
+
+<!--css引入样式
+内联样式：
+<p style="color:navy;font-size: 30px">我是内联样式</p>
+缺乏整体性和规划性，不利于维护，不是很推荐
+内部样式：
+再<head>里添加<style>
+一次性为所有的p添加样式（无法解决多个页面）
+
+外部样式：在head标签里使用<link>
+ <link rel="stylesheet" href="../css/public.css" type="text/css">
+public.css里面只写css，实现改变一个文件改变多个文件的样式
+-->
+<p style="color:navy;font-size: 30px">我是内联样式</p>
+
+<p>第一个段落</p>
+<p>第二个段落</p>
+<p>第三个段落</p>
+
+</body>
+</html>

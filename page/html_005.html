@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    table,tr,td{
+      border: 1px black solid;
+    /*边框的宽度为1px,颜色是红色 solid设置边框为实线*/
+    }
+    table{
+      border-collapse: collapse;
+      width: 400px;
+      height: 100px
+    }
+    td{
+      padding: 20px;
+      background-color: red;
+      color:white ;
+    }
+    ul li{
+      color:#ff413a;
+    }
+    div>p{
+      color: blueviolet;
+    }
+    h1+p{
+      color: chartreuse;
+    }
+    h1~p{
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+<!--表格属性
+1、边框:border
+ border: 1px red solid;
+    /*边框的宽度为1px,颜色是红色 solid设置边框为实线*/
+2、折叠边框
+ border-collapse: collapse;
+ 由双边框变成单边框
+3、表格的宽度和高度
+  width: 400px;
+  height: 100px;
+4、表文字居中对齐
+  text-align: center ;其实就是文本属性设置水平方式
+  vertical-align: center; 设置垂直方式
+5、表格填充：表格中的文字里边框（四个面）的距离
+  padding: 20px;给td添加这个属性，可以不用设置表格的宽高
+6、表格颜色
+   background-color: red; 设置背景颜色
+   color:white ;设置字体颜色
+
+ <style>
+    table,tr,td{
+      border: 1px black solid;
+    /*边框的宽度为1px,颜色是红色 solid设置边框为实线*/
+    }
+    table{
+      border-collapse: collapse;
+      width: 400px;
+      height: 100px
+    }
+    td{
+      padding: 20px;
+      background-color: red;
+      color:white ;
+    }
+  </style>
+-->
+    <table>
+      <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+      </tr>
+      <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+      </tr>
+      <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+      </tr>
+      <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+      </tr>
+</table>
+<hr>
+<!--
+关系选择器
+1、后代选择器
+  选择所有被E元素包含的F元素，中间用空格隔开
+  E F{ }
+  ul li{
+      color:#ff413a;
+    }嵌套也会生效
+2、子代选择器
+  选择所有作为E元素的直接子元素F.对深层不起作用
+  E>F{ }
+  div>p{
+      color: blueviolet;
+    }
+3、相邻兄弟选择器 向下选择
+  紧随着E的F元素，用+号表示 选择相邻兄弟的第一个元素
+  E+F{ }
+4、通用兄弟选择器
+  选择E之后的所有兄弟元素F，作用于多个元素用~隔开
+  E~F{ }
+  不是F元素并不会生效
+-->
+<!--后代选择器-->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>
+      3
+      <ul>
+        <li>3.1</li>
+        <li>3.2</li>
+        <li>3.3</li>
+        <li>3.4</li>
+      </ul>
+    </li>
+  </ul>
+<!--子代选择器-->
+<div>
+  <p>直接子代</p>
+  <ul>
+    <li><p>深层后代</p></li>
+  </ul>
+</div>
+<!--相邻兄弟选择器-->
+<h1>这是一个标题</h1>
+<p>这是与h1相邻的第一个p标签</p>
+<p>这是与h1相邻的第二个p标签</p>
+<!--通用兄弟选择器-->
+<h1>这是标题</h1>
+<p>第一个元素p</p>
+<span>这是一个span</span>
+<p>第二个元素p</p>
+<p>第三个元素p</p>
+</body>
+</html>
