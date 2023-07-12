@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="../font/iconfont.css">
+    <title>Title</title>
+    <style>
+      div{
+        width: 300px;
+        height: 300px;
+      }
+      p{
+        color: white;
+      }
+      /*手机*/
+      @media screen and (max-width: 768px) {
+        div{
+          background-color: blue;
+        }
+        p{
+          display: none;
+        }
+      }
+      /*平板*/
+      @media screen and (min-width: 768px) and (max-width: 996px) {
+        div{
+          background-color: gold;
+        }
+      }
+      /*平板*/
+      @media screen and (min-width: 996px){
+        div{
+          background-color: black;
+        }
+      }
+
+
+    /*  雪碧图*/
+      .span1{
+          display:block ;/*将有一个行内元素变成块元素 inline block none */
+          width: 45px;
+          height: 75px;
+          background-image: url("../img/css_sprite.webp");
+          background-position: -20px 0;
+      }
+      .span2{
+          display:block ;/*将有一个行内元素变成块元素 inline block none */
+          width: 45px;
+          height: 75px;
+          background-image: url("../img/css_sprite.webp");
+          background-position: -235px -85px;
+      }
+      .span{
+          font-size: 100px;/*字体图标 用字体属性*/
+          color: red;
+      }
+    </style>
+</head>
+<body>
+<!--
+媒体查询
+1、根据设备的大小自动是被加载不同的样式，达到不同设备下达到不同的效果
+2、meta标签
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+让网页元素的大小的原比列显示、不随着设备的改变改变
+width = device-width宽度等于当前设备的宽度
+initial-scale初始的缩放比例(默认设置为1.0)
+maximum-scale允许用户缩放到的最大比例(默认设置为1.0)
+user-scalable用户是否可以手动缩放(默认设置为no)
+3、媒体查询 @media screen and (max-width: 768px) 安and之间要空格
+      div{
+        width: 300px;
+        height: 300px;
+      }
+      /*手机*/
+      @media screen and (max-width: 768px) {
+        div{
+          background-color: blue;
+        }
+      }
+      /*平板*/
+      @media screen and (min-width: 768px) and (max-width: 996px) {
+        div{
+          background-color: gold;
+        }
+      }
+      /*平板*/
+      @media screen and (min-width: 996px){
+        div{
+          background-color: black;
+        }
+      }
+将内容实现在电脑上显示 在手机上隐藏 反之亦然 用display:隐藏 none 显示: block
+  /*手机*/
+      @media screen and (max-width: 768px) {
+        div{
+          background-color: blue;
+        }
+        p{
+          display: none;
+        }
+      }
+-->
+<div>
+  <p>这是一个在电脑和平板上的广告</p>
+</div>
+
+<!--
+css sprite 雪碧图
+1、一种网页图片应用处理方式，允许将一个页面涉及到的所有零星图片都包含到一张大图中去
+2、减少图片的字节 减少http请求 提高性能
+3、原理：通过background-image 引入背景图片 通过background-position把背景图片移动到自己需要的位置
+自我理解：将自己要的部分从背景图片中截取出来
+
+/*  雪碧图*/
+      .span1{
+          display:block ;/*将有一个行内元素变成块元素 inline block none */
+          width: 45px;
+          height: 75px;
+          background-image: url("../img/css_sprite.webp");
+          background-position: -20px 0;
+      }
+      .span2{
+          display:block ;/*将有一个行内元素变成块元素 inline block none */
+          width: 45px;
+          height: 75px;
+          background-image: url("../img/css_sprite.webp");
+          background-position: -235px -85px;
+      }
+-->
+
+<span class="span1"></span>
+<span class="span2"></span>
+
+<!--
+字体图标：代替图片图标，减少http请求 提高性能
+优势：
+    轻量性、灵活性、兼容性
+常用字体图标库：https://iconfont.cn/
+1、下载
+2、引入
+    <link type="text/css" rel="stylesheet" href="../font/iconfont.css">
+3、使用<span class="iconfont icon-shujutongji span"></span> span定义大小颜色
+ .span{
+          font-size: 100px;/*字体图标 用字体属性*/
+          color: red;
+      }
+-->
+
+<!--字体图标-->
+<span class="iconfont icon-shujutongji span"></span>
+</body>
+
+</html>

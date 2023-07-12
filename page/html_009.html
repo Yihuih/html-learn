@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+    .div{
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      background-color: blueviolet;
+      margin: 10px auto;
+      box-shadow:20px 20px 10px gainsboro;
+      animation: frame 3s linear 5s infinite alternate running;
+    }
+    div:hover{
+      background-color: gold;
+      animation:paused ;
+    }
+    .breathe{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: blueviolet;
+      margin: 10px auto;
+      box-shadow:20px 20px 10px gainsboro;
+      animation: breath 2s ease-in-out infinite alternate;
+    }
+    @keyframes frame {
+      0%{
+        width: 500px;
+        background-color: #ff413a;
+      }
+      25%{
+        width: 400px;
+        background-color: olivedrab;
+      }
+      50%{
+        width: 300px;
+        background-color: blue;
+      }
+      75%{
+        width: 400px;
+        background-color: pink;
+      }
+      100%{
+        width: 500px;
+        background-color: #ff413a;
+      }
+    }
+
+    @keyframes breath {
+      0%{
+        opacity: 0.2;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.2);
+      }
+      25%{
+        opacity: 0.4;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.4);
+      }
+      50%{
+        opacity: 0.6;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.6);
+      }
+      75%{
+        opacity: 0.8;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.8);
+      }
+      100%{
+        opacity: 1;
+        box-shadow: 0 1px 2px rgba(255,255,255,1);
+      }
+
+    }
+  </style>
+</head>
+<body>
+<!--  css新特性 （最常用的两个 圆角 阴影）
+圆角
+   border-radius: 10px;多值代表多角
+   border-radius: 100%;变成一个圆形
+阴影
+   box-shadow: h-shadow v-shadow blur color;
+      h-shadow:必选，水平阴影的位置
+      v-shadow:必选，垂直阴影的位置
+      blur:可选，模糊距离
+      color:可选，阴景影的颜色
+    box-shadow:20px 20px 10px gainsboro;
+
+     div{
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      background-color: blueviolet;
+      margin: auto auto;
+      box-shadow:20px 20px 10px gainsboro;
+    }
+-->
+<div class="div"></div>
+
+<!--
+动画：是使元素从一种样式逐渐变化成另一种样式的效果
+变化时间 0% 100% from to
+@keyframes创建动画
+@keyframes frame {
+      from|0%{
+        css样式
+      }
+      50%{
+       css样式
+      }
+      to|100%{
+        css样式
+      }
+    }
+ from to只有两个变化 多个变化可以使用percent%实现
+animation执行动画
+animation: name duration timing-function delay iteration-count direction;
+  name：设置动画的名称
+  duration：设置动画的持续时间
+  timing-function：设置动画效果的速率（如下)
+      ease 逐渐变慢 linear 匀速 ease-in 加速 ease-out 减速 ease-in-out 先加速后减速
+  delay：设置动画的开始时间(延时执行)
+  iteration-count：设置动画循环的次数，infinite为无限次数的循环
+  direction：设置动画播放的方向(如下)
+      normal 默认向前播放  alternate 偶数次向前 奇数次向后
+  animation-play-state：控制动画的播放状态: running代表播放，而paused代表停止播放
+鼠标放到位置上 实现动画 切换背景颜色
+div(可变):hover{
+
+}
+div{
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      background-color: blueviolet;
+      margin: 10px auto;
+      box-shadow:20px 20px 10px gainsboro;
+      animation: frame 3s linear 5s infinite alternate running;
+    }
+    div:hover{
+      background-color: gold;
+      animation:paused ;
+    }
+    @keyframes frame {
+      0%{
+        width: 500px;
+        background-color: #ff413a;
+      }
+      25%{
+        width: 400px;
+        background-color: olivedrab;
+      }
+      50%{
+        width: 300px;
+        background-color: blue;
+      }
+      75%{
+        width: 400px;
+        background-color: pink;
+      }
+      100%{
+        width: 500px;
+        background-color: #ff413a;
+      }
+    }
+-->
+<div class="div"></div>
+<hr>
+<p>呼吸效果</p>
+<!--
+呼吸效果
+opacity 透明度0-1
+    .breathe{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: blueviolet;
+      margin: 10px auto;
+      box-shadow:20px 20px 10px gainsboro;
+      animation: breath 2s ease-in-out infinite alternate;
+    }
+     @keyframes breath {
+      0%{
+        opacity: 0.2;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.2);
+      }
+      25%{
+        opacity: 0.4;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.4);
+      }
+      50%{
+        opacity: 0.6;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.6);
+      }
+      75%{
+        opacity: 0.8;
+        box-shadow: 0 1px 2px rgba(255,255,255,0.8);
+      }
+      100%{
+        opacity: 1;
+        box-shadow: 0 1px 2px rgba(255,255,255,1);
+      }
+
+    }
+-->
+<div class="breathe"></div>
+</body>
+</html>

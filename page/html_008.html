@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .container{
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      left: 50%;
+      top:50%;
+      background-color: #ff413a;
+    }
+    .item{
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+      left: 40%;
+      top:40%
+    }
+  </style>
+</head>
+<body>
+<!--
+定位position
+  position属性指定元素的定位类型
+    1、relative 相对定位 脱离文档流
+    2、absolute 绝对定位 浮动元素都在第二层 但是一个绝对定位就是一层
+    3、fixed 固定定位  页面滚动，这个元素都不会改变
+绝对定位和固定定位会脱离文档流
+设置定位之后:可以使用四个方向值进行调整位置：left top right bottom Z-index
+温馨提示：设置定位之后 相对定位和绝对定位是相对于具有定位的父级元素进行位置调整，如果父级元素不存在定位，则向上继续逐级寻找直到顶层文档
+Z-index :属性设置元素的堆叠顺序，拥有更高的堆叠顺序的元素总是会处于堆叠顺序较低元素前面
+-->
+<!--相对定位-->
+<div style="background-color:blue;width: 200px;height: 200px;position: relative; left: 400px;top:400px;" >相对定位</div>
+<!--绝对定位-->
+<div style="background-color: #ff413a;width: 200px;height: 200px;position:absolute; left: 300px;top:300px" >绝对定位</div>
+<!--固定定位-->
+<div style="background-color: green;width: 200px;height: 200px;position:fixed; left: 400px;top:400px" ></div>
+<p style="height: 1000px">hh</p>
+<!--温馨提示-->
+<div class="container">
+  <div class="item"></div>
+</div>
+<!--z-index-->
+<div style="background-color: #ff413a;margin:10px;width: 200px;height: 200px;Z-index:2;position: absolute">1</div>
+<div style="background-color: #ff413a;margin:10px;width: 200px;height: 200px;Z-index:3;position: absolute">2</div>
+<div style="background-color: #ff413a;margin:10px;width: 200px;height: 200px;Z-index:11;position: absolute">3</div>
+<div style="background-color: #ff413a;margin:10px;width: 200px;height: 200px;z-index:5;position: absolute">4</div>
+</body>
+</html>

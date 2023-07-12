@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>007</title>
+    <style>
+        img{
+            float: left;
+        }
+
+        ul li{
+            float: left;
+            margin:  0 40px;
+        }
+
+        .container{
+            background-color: gainsboro;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            clear: both;
+        }
+        .container::after{
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .float1{
+            background-color: green;
+            width: 100px;
+            height:100px;
+            margin: 5px;
+            float: left;
+        }
+        .normal{
+            background-color: pink;
+            width: 100px;
+            height:100px;
+            margin: 5px;
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+文档流：是指文档中可显示对象在排列时所占用的位置、空间
+    例如：块元素自上而下摆放 内联元素自左向右摆放
+    容易造成问题：高矮不齐、底边对齐
+    空白折叠：多个空格、换行、tab都折叠成一个空格
+    元素无间隙：两个img之间没有空隙:换行有空隙，不换行没有空隙 我们的需求是换行也没有空隙
+使用标准文档流会出现各种各样的问题
+脱离文档流
+    1、浮动
+    2、绝对定位
+    3、固定定位
+-->
+<!--高低不齐，底边对齐-->
+<span>这是一个美丽的小姐姐</span>
+<img src="../img/mein1.webp" style="width: 200px;height: 200px">
+<!--空格折叠：页面只有一个空格-->
+<p>这是一个空格         折叠</p>
+
+<!--元素无间隙：两个img之间没有空隙-->
+<img src="../img/mein1.webp" style="width: 200px;height: 200px">
+<img src="../img/mein1.webp" style="width: 200px;height: 200px"><img src="../img/mein1.webp" style="width: 200px;height: 200px">
+<hr>
+<br>
+<!--
+浮动
+    1、定义：通过float属性来定义元素在哪个方向浮动，任何方向都可以浮动
+    2、语法：float:left|right 只有左右浮动 没有上下浮动
+    3、可以结合其他元素属性使用，例如结合ul实现水平导航栏
+    4、当容量不足时会换到下一行
+ img{
+            float: left;
+        }
+
+        ul li{
+            float: left;
+            margin:  0 40px;
+        }
+-->
+<!--两div的float-->
+<div style="float: left; height: 300px;width:300px;background-color: red"></div>
+<div style="height: 800px;width:800px;background-color: green"></div>
+<!-- 实现导航栏-->
+<ul>
+        <li><a href="#">部分一</a></li>
+        <li><a href="#">部分二</a></li>
+        <li><a href="#">部分三</a></li>
+ </ul>
+<!--两个图片换行但是没有空隙的实现-->
+<div>
+    <img src="../img/beij2.png" height="300px" width="300ox">
+    <img src="../img/beij2.png" height="300px" width="300ox">
+</div>
+
+<!--消除浮动
+浮动的缺陷
+    1、造成父级容器的高度塌陷
+    2、影响后续的元素也会受到影响\
+清除浮动：
+    1、父元素设置高度-解决高度塌陷问题
+    2、受影响的元素添加clear属性
+        clear: left | right | both;
+    3、overflow清除浮动 最常用 弹性容器的高度是不固定的
+        父级标签里添加
+         overflow: hidden;
+         clear: both;
+    4、伪对象方式呢
+         .container::after{
+            content: " ";
+            display: block;
+            clear: both;
+         }
+-->
+
+<div class="container">
+    <div class="float1"></div>
+    <div class="float1"></div>
+    <div class="float1"></div>
+    <div class="normal"></div>
+</div>
+</body>
+</html>
