@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 400px;
+            background-color: chartreuse;
+
+        }
+        .item1{
+            flex: 5;
+            color: white;
+            margin: 10px;
+            background-color: black;
+        }
+        .item2{
+            flex: 1;
+            color: white;
+            margin: 10px;
+            background-color: lightsalmon;
+        }
+        .item3{
+            flex: 1;
+            color: white;
+            margin: 10px;
+            background-color: blue;
+        }
+        .item4{
+            flex: 1;
+            color: white;
+            margin: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--css盒子模型 BOX MODEL
+所有的HTML元素都看作一个盒子，封装周围的元素包括：
+    外边距（margin）：清除边框外的区域，外边距是透明的
+        margin: 50px 10px;距离网页边距的距离 默认8px
+       margin-left right top bottom
+    边框（border）：围绕在内边距和内容外的边框
+         border: 5px blue solid;
+    内边距（padding）：清除内容周围的区域,内边距是透明的//内容到边框的距离
+         padding: 40px 50px;双值设定 上下 左右
+        padding-left right top bottom
+    实际内容（content）：盒子的内容，显示文本和图像
+         div里面的内容 及设置的宽高
+          width: 500px;
+          height: 500px;
+
+div{
+            width: 500px;
+            height: 500px;
+            padding-left: 40px;
+            padding-top: 40px;
+            background-color: cadetblue;
+            text-align: center;
+            border: 5px blue solid;
+            margin-right: 15px;
+        }
+-->
+<div>这是第一个盒子</div>
+<hr>
+<!--
+弹性盒子模型：大盒子里面包含小盒子
+1、定义：新的css布局、能适应不同的屏幕大小
+2、内容：弹性容器（flex container） 弹性子元素（flex item）组成
+3、弹性容器通过设置display属性的值为flex来定义为弹性容器，里面包含一个或者多个弹性子元素
+4、弹性盒子里面的元素默认垂直放置
+属性1：（父元素设置）
+1、flex-direction 排列方式 弹性容器里面的弹性子元素
+    语法：flex-direction: row |row-reverse |column |column-reverse;
+    水平row 垂直 column 翻转 row-reverse
+2、justify-content 内容对齐 垂直方向
+    justify-content: flex-start(默认 左) | center | flex-end（右）;
+3、align-items 内容对齐 水平方向
+    align-items: flex-start(默认 左) | center | flex-end（右）;
+属性2：（子元素设置）
+1、flex-grow（不是很准确、不推荐） \flex 弹性子元素占弹性容器的比重
+    设置之后 弹性子元素的宽或者高其中一个属性不会生效
+    flex-direction: row; 宽不生效 flex-direction: column;高不会生效
+    eg:item1 4 item2 2 item3 1 item4 1 将弹性容器分成8份每个弹性子元素占一定的比重
+    flex:数字;数字代表这个弹性子元素占弹性容器权重
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 800px;
+            background-color: chartreuse;
+        }
+        .item1{
+            flex: 5;
+            color: white;
+            background-color: black;
+        }
+        .item2{
+            flex: 1;
+            color: white;
+            background-color: lightsalmon;
+        }
+        .item3{
+            flex: 1;
+            color: white;
+            background-color: blue;
+        }
+        .item4{
+            flex: 1;
+            color: white;
+            background-color: red;
+        }
+-->
+<div class="container">
+    <div class="item1">box1</div>
+    <div class="item2">box2</div>
+    <div class="item3">box3</div>
+    <div class="item4">box4</div>
+</div>
+</body>
+</html>
