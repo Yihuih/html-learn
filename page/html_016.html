@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+函数：一段可以反复调用的代码块
+  函数声明：function（函数声明） 函数名( 传入的参数){
+            函数体
+            return //返回值
+          }
+
+           function def(a,b){
+              console.log('这是一个函数');
+              return a+b;
+            }
+
+  函数调用：函数名()  def(2,4);//调用函数
+  参数：def(2,3)
+       def('fsd','sdfs')
+   返回值： return a+b; result=def('2','4');//用result接受函数的返回值
+        函数内return之后的代码不执行
+-->
+<script>
+  function def(a,b) {
+    console.log('这是一个函数', a + b);
+    return a + b;
+    console.log('这里的代码不会生效')//不会执行
+  }
+  def(2,3)
+  def('fsd','sdfs')
+  result=def('2','4');//调用函数
+  console.log(result)
+</script>
+
+
+<!--
+对象：一组键值对的集合 是一种无序的复合数据集
+  1、创建一个对象
+  var obj={
+    name:'yhh', //一对键值对 name为属性
+    age:14,
+    job:['adsa','ads1a'],
+      还可以创建方法/函数
+    getName:function (){
+      console.log('这是一个对象方法name')
+    },
+    对象里嵌套对象
+    container:{
+      name:'container',
+      age:34,
+      company:'阿里巴巴'
+    }
+  }
+  2、使用对象属性
+  console.log(obj.name)//调用name
+  console.log(obj.job)//调用数组
+  3、遍历对象里的数组
+  for(item in obj.job){
+    console.log(obj.job[item])
+  }
+  4、调用方法
+  obj.getName()
+  5、调用对象 链式调用
+  console.log('调用对象'+obj.container.age)
+
+-->
+<script>
+  //创建一个对象
+  var obj={
+    name:'yhh', //一对键值对 name为属性
+    age:14,
+    job:['adsa','ads1a'],
+    //还可以创建方法/函数
+    getName:function (){
+      console.log('这是一个对象方法name')
+    },
+    //对象里嵌套对象
+    container:{
+      name:'container',
+      age:34,
+      company:'阿里巴巴'
+    }
+  }
+  //使用对象属性
+  console.log(obj.name)//调用name
+  console.log(obj.job)//调用数组
+  //遍历对象里的数组
+  for(item in obj.job){
+    console.log(obj.job[item])
+  }
+  //调用方法
+  obj.getName()
+  //调用对象 链式调用
+  console.log('调用对象'+obj.container.age)
+</script>
+
+<!--
+math对象：JavaScript提供的原生对象，提供各种数学功能
+  1、abs()求绝对值 一个参数
+  2、max() min()   求最大值、最小值
+  3、floor() ceil() 向下取整 向上取整
+  4、random() 随机生成一个[0,1)的随机数 生成[min,max的方法)；Math.floor(Math.random()*(max-min)+min)
+-->
+<script>
+  // abs()求绝对值 一个参数
+  var a=Math.abs(-34);
+  console.log('-34的绝对值是'+a)
+  // max() min()   求最大值、最小值
+  console.log(Math.max(1,2,3,4,5,6))//最大值
+  console.log(Math.min(1,2,3,4,5,6))//最小值
+  // floor() ceil() 向下取整 向上取整
+  console.log('向下取整',Math.floor(10.3))
+  console.log('向上取整',Math.ceil(10.3))
+  // random() 随机生成一个[0,1)的随机数
+  console.log('随机数1-100',Math.floor(Math.random()*100))
+  function getRandom(min,max){
+    return Math.floor(Math.random()*(max-min)+min)
+  }
+  console.log("随机生成23-59之间的随机数",getRandom(23,59))
+</script>
+
+<!--
+Date对象：JavaScript的原生时间库 以1970 01 01 00:00:00为时间零点 可以表示后1亿天(单位毫秒 1s=1000ms)
+0、Date() 创建时间对象 一直在变化Sat Jul 15 2023 18:31:19 GMT+0800 (中国标准时间)
+  传入参数时间戳1689416678035固定
+1、Date.now()返回当前时间距离时间零点的毫秒数
+  时间戳:是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分O0秒)起至现在的总秒数。
+2.get类方法；new Date("时间戳").get方法()
+  getTime():返回实例距离1970年1月1日00:00:00的毫秒数
+  getDate():返回实例对象对应每个月的几号(从1开始)
+  getDay():返回星期几，星期日为0，星期一为1，以此类推
+  getYear():返回距离1900的年数
+  getFullYear():返回四位的年份
+  getMonth():返回月份（O表示1月，11表示12月)
+  getHours():返回小时(0-23)
+  getMilliseconds():返回毫秒(0-999)
+  getMinutes():返回分钟(0-59)getSeconds():返回秒(O-59)
+
+-->
+<script>
+  console.log(Date.now())
+  console.log(new Date())
+  //1689416678035 时间戳
+  console.log( "1689416678035 时间戳",new Date(1689416678035)) //需要new关键字 不然是当前时间
+
+  // getTime():返回实例距离1970年1月1日00:00:00的毫秒数 时间戳
+  console.log('getTime',new Date(1689416678035).getTime())
+  // getDate():返回实例对象对应每个月的几号(从1开始) //返回日
+  console.log('getDate',new Date(1689416678035).getDate())
+  // getDay():返回星期几，星期日为0，星期一为1，以此类推
+  console.log('getDay',new Date(1689416678035).getDay())
+  // getYear():返回距离1900的年数
+  console.log('getYear',new Date(1689416678035).getYear())
+  // getFullYear():返回四位的年份
+  console.log('getFullYear',new Date(1689416678035).getFullYear())
+  // getMonth():返回月份（O表示1月，11表示12月)
+  console.log('getMonth',new Date(1689416678035).getMonth())
+  // getHours():返回小时(0-23)
+  console.log('getHours',new Date(1689416678035).getHours())
+  // getMilliseconds():返回毫秒(0-999)
+  console.log('getMilliseconds',new Date(1689416678035).getMilliseconds())
+  // getMinutes():返回分钟(0-59)
+  console.log('getMinutes',new Date(1689416678035).getMinutes())
+  // getSeconds():返回秒(O-59)
+  console.log('getSeconds',new Date(1689416678035).getSeconds())
+
+//   练习 显示现在的时间年月日时分秒
+  console.log('现在时间是'+new Date().getFullYear()+'年'+new Date().getMonth()+"月"+new Date().getDate()+'日'+new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds())
+</script>
+</body>
+</html>

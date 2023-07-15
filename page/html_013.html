@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--for循环
+语法：
+for(初始化表达式;条件;迭代因子){
+   语句
+  }
+  初始化表达式:循环的初始值
+  条件：判断是否执行循环
+  迭代因子：最后执行，通常用来递增循环变量
+for循环可以嵌套
+-->
+<script>
+  for(var i=0;i<100;i++){
+    console.log(i)
+  }
+//   for嵌套使用 打印出九九乘法表
+  for (var i=1;i<=9;i++){
+    for (var j=1;j<=i;j++){
+      // console.log(j,'*',i,'=',i*j)
+      console.log(i+'*'+j+"="+i*j)//用加号连接
+      document.write(i+'*'+j+'='+i*j+' ')
+    }
+    document.write("<br>")
+  }
+//   for 循环计算1-100的和
+  var result=0;
+  for(var i=1;i<=100;i++){
+    result+=i;
+  }
+  console.log('1-100的和是：',result)
+
+//   循环输出1000以内的奇数
+  function is_j(num){
+    // if(num % 2==0){
+    //   return false;
+    // }
+    // else {
+    //   return true;
+    // }
+   return  num % 2==0?false:true
+  }
+  let dist=[]
+  for (var i=0;i<=1000;i++){
+    if(is_j(i)){
+      dist.push(i)
+    }
+  }
+  console.log(dist,typeof dist)
+</script>
+
+<!--
+循环语句while
+ while (布尔表达式){
+        语句
+    }
+    布尔表达式的值为真时执行语句
+    所有的for循环都可以改写成while循环
+-->
+<script>
+    var i=0;
+    while (i<10){
+        document.write(i+' ');
+        i++;
+    }
+</script>
+<hr>
+<p>break跳出整个循环 continue 跳出当前循环</p>
+<!--break跳出整个循环 结束整个循环 continue 跳出当前循环-->
+<script>
+    var i=0;
+    while (i<100){
+        if(is_j(i)){
+            i++; //i自增不然会陷入死循环 加入i=1时会一直循环
+            continue; //遇到奇数跳过这个循环
+        }
+        if(i==80){
+            break;//i==80时结束整个循环
+        }
+        document.write(i+' ')
+        i++;
+    }
+</script>
+</body>
+</html>

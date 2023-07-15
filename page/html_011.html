@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--javascript
+脚本语言  嵌入式语言
+操控浏览器的能力、广泛的使用领域、易学性
+ECMAScript是javaScript的规范 javaScript是ECMAScript的实现 ES6
+ES5版本 ES6在ES5的基础上增加新的特性
+
+javaScript 语句和标识符
+1、语句js的程序单位是行，一行一行的执行一般情况下、每一行就是一个语句
+    <script>
+        var num=10; //声明一个变量num
+    </script>
+    语句以;结尾
+
+2、标识符 $ a-z A-Z number 数字不能开头 //中文也可以 不推荐 不能和保留关键字重复
+
+3、变量
+    var  num = 10;声明变量
+    console.log(num)打印
+
+    变量提升 ；将所有声明变量的语句提升到代码的头部 导致先使用后声明变量值是undefined 并不会报错
+
+-->
+<script>
+    console.log(num)
+    var num=10; //声明一个变量var与num之间必加空格
+    var num3=5;
+    console.log(num3)
+</script>
+
+<!--JavaScript引入到文件的方式
+1、嵌套在html
+<script>
+    console.log(num)
+    var num=10; //声明一个变量var与num之间必加空格
+    var num3=5;
+    console.log(num3)
+</script>
+2、引入本地独立js文件
+<script src="../js/hello.js"></script>
+3、引入网络来源文件
+-->
+<!--嵌套在html-->
+<script>
+    console.log(num)
+    var num=10; //声明一个变量var与num之间必加空格
+    var num3=5;
+    console.log(num3)
+</script>
+<!--引入本地独立js文件-->
+<script src="../js/hello.js"></script>
+<!--引入网络来源文件-->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<!--JavaScript注释、输出
+注释：快捷键ctrl+/注释一行
+    <script>
+        var num=40;//单行注释
+        console.log(num) /*多行注释*/
+    </script>
+输出
+    1、 弹出框：alert("这是一个弹出框");
+    2、 输出到页面：document.write("我是输出到页面");
+    3、 输出到控制台：console.log("输出到控制台")
+-->
+<script>
+    var num=40;//单行注释
+    console.log(num)
+    /*多
+    行
+    注
+    释*/
+</script>
+
+<script>
+    alert("这是一个弹出框");
+    document.write("我是输出到页面");
+    console.log("输出到控制台")
+</script>
+
+<!--
+JavaScript数据类型：数值、字符串（双引号、单引号包裹）、布尔值（true false） 、null、对象、undefined
+ES6新增两种 symbol bigint
+分类：
+    原始数据类型：数值、字符串、布尔值
+    引用（合成）数据类型：对象object
+    null(空值)、undefined(未定义)特殊值
+-->
+
+<script>
+    var use={
+        name:'马云',
+        age:23,
+        is_marriage:true,
+        job:[1,2,3,4]
+    }
+</script>
+<!--
+typeof运算符：主要判断基本数据类型
+null 数组返回的是object
+null对象为空 undefined 数值没有
+-->
+
+<script>
+    var num=20//数值类型
+    console.log(typeof num)
+    var char='字符串'//字符串
+    console.log(typeof char)
+    var bool=true//布尔值
+    console.log(typeof bool)
+</script>
+<!--
+算术运算符
++ - * /  % i++ i-- ++i --i
+i++ 先运算在自增 ++i 先自增在运算
+
+赋值运算符
+= += -= *= /= %=
+
+比较运算符
+< > <=  >= == ===(严格相等) != !==(严格不相等)
+严格比较 比较值和数据类型
+
+布尔运算符
+！取反  && 且 || 或
+false:null undefined 0 NaN false
+
+-->
+<script>
+    var num1=3;
+    var num2=4;
+    console.log(num1+num2)
+    console.log(num1-num2)
+    console.log(num1*num2)
+    console.log(num1/num2)
+    console.log(num1%num2)
+    console.log('num1++',num1++)
+    console.log('num1--',num1--)
+    console.log('++num1',++num1)
+    console.log('--num1',--num1)
+</script>
+
+<!--赋值运算符-->
+<script>
+    var x=3;
+    var y=x;//将x的值赋值给y
+    x += y;//相当于x=x+y
+    console.log(x)
+</script>
+
+<!--比较运算符-->
+<script>
+    var num1=10;
+    var num2='10';
+    console.log(num1===num2) //false
+    console.log(num1==num2)  //ture
+    console.log(num1!==num2) //ture 因为类型不相等 返回ture
+    console.log(num1!=num2)  //false
+</script>
+
+<!--布尔运算符-->
+<script>
+    var bool=true;
+    console.log(!bool)//false
+    console.log(100>10&&10>0)
+    console.log(100>10||10<0)
+</script>
+</body>
+</html>

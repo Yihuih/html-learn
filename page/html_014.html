@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+字符串：0个或者多个排列在一起的字符 用单引号或者单引号之中
+'dasds' "dsfaasf"
+单双引号可以相互嵌套 规则：不能双引号嵌套双引号 单引号嵌套单引号 用\做转义字符
+length属性求字符串的长度
+-->
+<script>
+  var str1='nih"sfsf"ao' //相互嵌套
+  // var str1='niha'fsd'o'//报错 单嵌套报错
+  //转义字符
+  var str3="我喜欢\"哈利波特\""
+  document.write(str3+'转义字符')
+  document.write("<br>"+str3.length+"利用length属性求str的长度")
+</script>
+<hr>
+<br>
+<!--
+常用字符串的方法
+1、charAt 返回自定位置的字符 参数从0开始
+2、concat 连接两个字符串 不改变原字符串
+    str1.concat(str2,str3,str4) k可以接收多个参数 参数不是字符串 会转成字符串
+    可以使用+连接字符串
+3、substring(start,end) 用于截取字符串(总开始为直到结束位置 结束位置不包括) 不改变原字符串,
+    start>end 时会自动交换位置（9，2）变成（2，9）负数会转化成0
+    substr(start,length) 第一个参数是负数 则倒数计算love -2 v 第二次参数是负数转换成0，返回一个空字符串
+4、indexof 字符串匹配 返回匹配的第一个位置 如果为-1 则表示没有该字符串没有匹配到目标字符
+    可以接收第二个参数 表示从参数位置开始查找
+    str.indexof(str1, 4)//在str中从4之后查找是否有str1
+5、trim() 去除字符串两端的空格、换行、tab、\n、\t等，不改变原字符串  用于对字符串有严格要求的用户名密码等
+    trimStart()去除开始的空格等
+    trimEnd()去除结尾的空格等
+6、split() 按照规则划分字符串，返回一个子字符串组成的数组
+    str1.split('|')
+    str1.split('')如果传入的参数时空字符，则返回的每一个字符
+    str1.split() 没有参数，返回原字符串
+    str1.split('',5) 第二个参数 返回字符的最大长度 //返回五个
+
+-->
+<script>
+  var str="i love you!"
+  var str1="mom,"
+  // charAt  str.length-1 是字符串的最后一位
+  document.write("用charAt传str的第二个字符"+str.charAt(2))
+  //concat
+  result=str1.concat(str)
+  document.write('用concat拼接两个字符串',result)
+  //用substring 截取 str 中的love
+  document.write("用substring 截取 str 中的love, 截取结果是：",str.substring(2,6))
+  //用substr取出str中的love
+  document.write("<br>"+"用substr取出str中的love,结果为：",str.substr(2,4))
+  // 第二个参数是负数
+  document.write("<br>",'第二个参数是负数'+"用substr取出str中的love,结果为：",str.substr(-9   ,4))
+  //indexof 匹配字符串
+  document.write("<br>","用indexof匹配字符:i love you!中的ove,结果是",str.indexOf('ove'))
+  //trim() 去除字符串两端的字符
+  var str2='   i love you!    '
+  console.log(str2)
+  document.write("<br>",str2)
+  console.log(str2.trimStart())
+  console.log(str2.trimEnd())
+  //split() 按照规则划分字符串，返回一个子字符串组成的数组
+  var str1="fadfa|sdfs|sdfsda|fdfs|sfsd"
+  newstr1=str1.split('|')
+  document.write("<br>",str1.split(''))//f,a,d,f,a,|,s,d,f,s,|,s,d,f,s,d,a,|,f,d,f,s,|,s,f,s,d
+  document.write("<br>",str1.split('',5))
+  console.log(newstr1) //f,a,d,f,a
+</script>
+
+</body>
+</html>

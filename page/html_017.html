@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+DOM
+DOM是JavaScript操作网页的接口，全称为“文档对象模型”(Document Object Model)。它的作用是将网页转为一个JavaScript对象，从而可以用脚本进行各种操作（比如对元素增删内容)
+浏览器会根据DOM模型，将结构化文档HTML解析成一系列的节点，再由这些节点组成一个树状结构（DOMTree)。所有的节点和最终的树状结构，都有规范的对外接口
+DOM只是一个接口规范，可以用各种语言实现。所以严格地说，DOM 不是JavaScript语法的一部分，但是DOM操作是JavaScript最常见的任务，离开了DOM，JavaScript就无法控制网页。另一方面，JavaScript也是最常用于DOM操作的语言
+1、节点
+  DOM的最小组成单位叫做节点(node)。文档的树形结构（DOM树)，就是由各种不同类型的节点组成。每个节点可以看作是文档树的一片叶子
+2、节点类型
+  节点的类型有七种
+  Document:整个文档树的顶层节点
+  DocumentType: doctype标签Element:网页的各种HTML标签
+  Attribute: 网页元素的属性(比如class="right"")Text:标签之间或标签包含的文本
+  Comment:注释
+  DocumentFragment:文档的片段
+3、节点数节点树
+  一个文档的所有节点，按照所在的层级，可以抽象成一种树状结构。这种树状结构就是DOM树。它有一个顶层节点，下一层都是顶层节点的子节点，然后子节点又有自己的子节点，就这样层层衍生出一个金字塔结构，倒过来就像—棵树
+  <html>包裹<head> <body> <head> <body>又包裹其他形成层次结构
+4、原生节点：document //整个文档树
+5、节点之间的关系
+父节点关系(parentNode):直接的那个上级节点
+子节点关系(childNodes):直接的下级节点
+同级节点关系(sibling) :拥有同一个父节点的节点
+6、Node.nodeType属性
+不同节点的nodeType属性值和对应的常量如下
+文档节点(document) :_9，对应常量Node.DOCUMENT_NODE
+元素节点(element) : 1，对应常量Node.ELEMENT_NODE
+属性节点(attr) : 2，对应常量Node.ATTRIBUTE_NODE
+文本节点(text) : 3，对应常量Node.TEXT_NODE
+文档片断节点(DocumentFragment) : 11，对应常量Node.DOCUMENT_FRAGMENT_NODE
+DOM是JavaScript操作网页的接口
+-->
+<!--
+document对象方法/获取元素
+1、getElementsByTagName('Tagname')[0]读取第一个div
+    var divs=document.getElementsByTagName('div')
+    divs[0].innerHTML='通过innerHTML添加到页面的元素'
+    console.log(divs[0])
+    //innerHTML 是一个属性，用于访问或修改 HTML 元素的内容。它可以返回一个元素的 HTML 内容，也可以将新的 HTML 内容设置给元素。
+2、getElementsByClassName()
+    var clas=document.getElementsByClassName('div1')
+    clas[0].innerHTML='通过innerHTML添加到页面的元素'
+    console.log(clas)
+3、getElementsByName
+4、getElementById //只返回第一个 #id class .
+5、querySelector 返回一个
+    document.querySelector方法接受一个CSS选择器作为参数，返回匹配该选择器的元素节点。
+    如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回null
+6、querySelectorAll
+-->
+<div>"这是第一个div"</div>
+<div>"这是第二个div"</div>
+<div>"这是第三个div"</div>
+<div class="div1">"这是第yi个div"</div>
+<div class="div1">"这是第er个div"</div>
+<div class="div1">"这是第san个div"</div>
+
+<script>
+    // getElementsByClassName
+    var divs=document.getElementsByTagName('div')
+    divs[0].innerHTML='通过innerHTML添加到页面的元素'//innerHTML 是一个属性，用于访问或修改 HTML 元素的内容。它可以返回一个元素的 HTML 内容，也可以将新的 HTML 内容设置给元素。
+    console.log(divs[0])
+    // getElementsByClassName
+    var clas=document.getElementsByClassName('div1')
+    clas[0].innerHTML='通过innerHTML添加到页面的元素'
+    console.log(clas)
+</script>
+
+<!--
+document对象方法_创建元素
+1、创建元素 createElement
+     var text=document.createElement('p');
+2、创建元素文本信息 createTextNode
+    appendChild将内容或者子元素放到容器中
+    var text_content=document.createTextNode('这是一个p标签')
+    // appendChild将内容或者子元素放到容器中
+    text.appendChild(text_content);
+3、创建元素属性 createAttribute
+    setAttributeNode 将属性添加到创建的元素上
+    var name1=document.createAttribute('name');
+    name1.value="p_name";
+    text.setAttributeNode(name1)
+    console.log(text);
+4、将创建的元素属性显示到网页
+     //获取Div
+    var Div=document.getElementsByClassName("Div");//返回的是一个集合
+     //将创建的元素放到容器中
+    Div[0].appendChild(text);
+-->
+<div class="Div"></div>
+<script>
+    var text=document.createElement('p');
+    var text_content=document.createTextNode('这是一个p标签')
+    // appendChild将内容或者子元素放到容器中
+    text.appendChild(text_content);
+    var name1=document.createAttribute('name');
+    name1.value="p_name";
+    text.setAttributeNode(name1)
+    console.log(text);
+    //将创建的元素显示在Div之中
+    //获取Div容器
+    var Div=document.getElementsByClassName("Div");//返回的是一个集合
+    //将创建的元素放到容器中
+    Div[0].appendChild(text);
+</script>
+</body>
+</html>
